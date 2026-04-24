@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://ctut7ae8losy7"]
+
+[ext_resource type="Script" uid="uid://ddr5n77y8p0wc" path="res://scenes/shoot.gd" id="1_nsl4x"]
+[ext_resource type="Texture2D" uid="uid://dvg7y0uiui5ex" path="res://assets/shoot.png" id="2_v046p"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2gog3"]
+radius = 3.0
+height = 16.0
+
+[node name="Shoot" type="Area2D" unique_id=849487923]
+linear_damp = 1.0
+script = ExtResource("1_nsl4x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1970255729]
+shape = SubResource("CapsuleShape2D_2gog3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1622093956]
+texture = ExtResource("2_v046p")

@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://e08ej60cjel"]
+
+[ext_resource type="Script" uid="uid://brl8c646urlgb" path="res://scenes/spaceship.gd" id="1_ae4p7"]
+[ext_resource type="Texture2D" uid="uid://c3mkuoulfid27" path="res://assets/_ship_single.png" id="1_yqmju"]
+[ext_resource type="Texture2D" uid="uid://bcvtwiolgqqdp" path="res://assets/Exhaust-0001.png" id="3_xs8u7"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ae4p7"]
+radius = 47.0
+height = 100.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v0rat"]
+atlas = ExtResource("3_xs8u7")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_me4wu"]
+atlas = ExtResource("3_xs8u7")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_343tk"]
+atlas = ExtResource("3_xs8u7")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v6qj0"]
+atlas = ExtResource("3_xs8u7")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6i2wf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v0rat")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_me4wu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_343tk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v6qj0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Spaceship" type="RigidBody2D" unique_id=1321526533]
+gravity_scale = 0.0
+inertia = 1.0
+linear_damp = 0.5
+angular_damp = 2.0
+script = ExtResource("1_ae4p7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1995528218]
+scale = Vector2(2.3139534, 2.3139536)
+texture = ExtResource("1_yqmju")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1931409787]
+shape = SubResource("CapsuleShape2D_ae4p7")
+
+[node name="exhaust" type="AnimatedSprite2D" parent="." unique_id=1182413357]
+position = Vector2(1, 55.000004)
+scale = Vector2(1.3593749, 1.3593749)
+sprite_frames = SubResource("SpriteFrames_6i2wf")
+autoplay = "default"
+frame_progress = 0.8927461
+flip_v = true
+
+[node name="Kanone" type="Marker2D" parent="." unique_id=564133816]
+position = Vector2(0, -50)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1436030333]
