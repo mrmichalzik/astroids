@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://w5jrucr4ctop"]
+
+[ext_resource type="Texture2D" uid="uid://d2axtmu0wh815" path="res://assets/Background_Space-0001.png" id="1_m10ct"]
+[ext_resource type="Texture2D" uid="uid://01bepnw6o4xn" path="res://assets/Background_SmallStars-0001.png" id="2_yqcdc"]
+
+[node name="ParallaxBackground" type="Node2D" unique_id=988102420]
+
+[node name="ParallaxSpace" type="Parallax2D" parent="." unique_id=511873805]
+repeat_size = Vector2(960, 960)
+repeat_times = 3
+
+[node name="Space" type="Sprite2D" parent="ParallaxSpace" unique_id=37772189]
+scale = Vector2(3, 3)
+texture = ExtResource("1_m10ct")
+centered = false
+
+[node name="ParallaxSmallStars" type="Parallax2D" parent="." unique_id=567383823]
+repeat_size = Vector2(960, 960)
+repeat_times = 3
+
+[node name="SmallStars" type="Sprite2D" parent="ParallaxSmallStars" unique_id=445314765]
+scale = Vector2(3, 3)
+texture = ExtResource("2_yqcdc")
+centered = false

@@ -1,25 +1,16 @@
 [gd_scene format=3 uid="uid://c741eaqsvy4ir"]
 
-[ext_resource type="Texture2D" uid="uid://dc2qoj36wlmyg" path="res://assets/Background_Full-0001.png" id="1_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://w5jrucr4ctop" path="res://scenes/parallax_background.tscn" id="1_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://e08ej60cjel" path="res://scenes/spaceship.tscn" id="2_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://cmbfb811me3c0" path="res://scenes/portal.tscn" id="3_lnu2h"]
-[ext_resource type="Texture2D" uid="uid://cfe874ip74gtm" path="res://assets/nebel.png" id="4_lbhrr"]
 
 [node name="Game" type="Node2D" unique_id=1962693109]
 
-[node name="Background" type="Sprite2D" parent="." unique_id=1097640999]
-position = Vector2(575.99994, 306)
-scale = Vector2(6.346875, 4.0279255)
-texture = ExtResource("1_yqjtg")
+[node name="ParallaxBackground" parent="." unique_id=988102420 instance=ExtResource("1_lnu2h")]
+position = Vector2(578, 348)
 
 [node name="Spaceship" parent="." unique_id=1321526533 instance=ExtResource("2_lnu2h")]
 position = Vector2(569, 317)
 
 [node name="Portal" parent="." unique_id=518656576 instance=ExtResource("3_lnu2h")]
 position = Vector2(233, 448)
-
-[node name="Nebel" type="Sprite2D" parent="." unique_id=2059534572]
-modulate = Color(1, 1, 1, 0.03529412)
-position = Vector2(574.7501, 388.75012)
-scale = Vector2(6.7078123, 6.7078123)
-texture = ExtResource("4_lbhrr")
